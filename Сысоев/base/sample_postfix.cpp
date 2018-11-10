@@ -1,24 +1,14 @@
 ﻿#include <iostream>
 #include <string>
 #include "postfix.h"
-
 using namespace std;
-
-int main()
+int main() 
 {
-  string expression;
-  TPostfix postfix;
-  double res;
-
-  setlocale(LC_ALL, "Russian");
-  //cout << "Введите арифметическое выражение: ";
-  //cin >> expression;
-  //cout << expression << endl;
-  cout << "Арифметическое выражение: " << postfix.GetInfix() << endl;
-  postfix.ToPostfix();
-  cout << "Постфиксная форма: " << postfix.GetPostfix() << endl;
-  res = postfix.Calculate();
-  cout << res << endl;
-
-  return 0;
+	TPostfix postfix;
+	postfix.Set("1 + 2 * 3 / 4 - 5");
+	cout << "Infix: " << postfix.GetInfix() << endl;
+	postfix.GetPostfix();
+	cout << "Postfix: " << postfix.GetPostfix() << endl;
+	cout << "Result: " << postfix.Calculate() << endl;
+	return 0;
 }
